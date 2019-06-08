@@ -1,9 +1,12 @@
 'use strinct'
 
 //Importar Librerias
-const {app, BrowserWindow} = require ('electron')
+import  {app, BrowserWindow} from  'electron'
+import devtools from './devtools.js'
 
-
+if(process.env.NODE_ENV === 'developtment'){
+    devtools()
+}
 
 app.on('ready', () => {
     let win = new BrowserWindow({
